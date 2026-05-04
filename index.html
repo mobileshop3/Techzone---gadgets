@@ -2,101 +2,148 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TechZone Gadget Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechZone Premium | Your Ultimate Tech Partner</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; }
-        header { background: #333; color: #fff; padding: 1rem; text-align: center; }
-        nav { background: #444; padding: 0.5rem; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        section { padding: 20px; border-bottom: 1px solid #ddd; }
-        .product-grid { display: flex; gap: 20px; flex-wrap: wrap; }
-        .product-card { border: 1px solid #ccc; padding: 15px; width: 250px; border-radius: 8px; }
-        .price { color: green; font-weight: bold; }
-        .promo { background: #ffeb3b; padding: 10px; font-weight: bold; border: 2px dashed #f44336; }
-        img { max-width: 100%; height: auto; display: block; margin-bottom: 10px; }
+        :root {
+            --primary: #003366;
+            --secondary: #ffcc00;
+            --accent: #d9534f;
+            --bg: #f4f7f6;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; background-color: var(--bg); scroll-behavior: smooth; }
+
+        header { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; color: white; padding: 80px 20px; text-align: center; border-bottom: 5px solid var(--secondary); }
+        header h1 { font-size: 3.5rem; margin: 0; color: var(--secondary); text-transform: uppercase; letter-spacing: 2px; }
+        
+        nav { background: white; padding: 15px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.1); text-align: center; }
+        nav a { color: var(--primary); margin: 0 15px; text-decoration: none; font-weight: bold; transition: 0.3s; text-transform: uppercase; font-size: 0.9rem; }
+        nav a:hover { color: var(--accent); }
+
+        .container { width: 90%; max-width: 1200px; margin: auto; padding: 20px; }
+        .cat-header { font-size: 2rem; margin: 50px 0 30px; text-align: center; color: var(--primary); border-bottom: 3px solid var(--secondary); display: inline-block; width: 100%; padding-bottom: 10px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .card { background: white; border-radius: 20px; padding: 25px; text-align: center; transition: 0.4s; border: 1px solid #eee; position: relative; overflow: hidden; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--secondary); }
+        
+        /* Image Styling */
+        .card img { width: 100%; height: 200px; object-fit: contain; margin-bottom: 15px; }
+        
+        .card h3 { font-size: 1.3rem; margin: 10px 0; color: #333; }
+        .price { font-size: 1.6rem; color: var(--accent); font-weight: bold; display: block; margin: 15px 0; }
+        
+        .btn { background: var(--primary); color: white; border: none; padding: 12px 20px; border-radius: 50px; cursor: pointer; width: 100%; font-weight: bold; transition: 0.3s; }
+        .btn:hover { background: var(--secondary); color: var(--primary); }
+
+        .badge { background: var(--accent); color: white; padding: 5px 12px; border-radius: 50px; font-size: 0.7rem; position: absolute; top: 15px; right: 15px; font-weight: bold; z-index: 1; }
+
+        footer { background: #1a1a1a; color: #888; padding: 60px 20px; text-align: center; margin-top: 60px; border-top: 5px solid var(--secondary); }
+        .student-info { color: var(--secondary); font-weight: bold; font-size: 1.3rem; margin-bottom: 5px; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>TechZone Gadget Store</h1>
-    <p>Modern Electronics for Your Lifestyle</p>
-</header>
+    <header>
+        <h1>TechZone Premium</h1>
+        <p>The Best Deals on Phones, Laptops & Tablets in Sri Lanka</p>
+    </header>
 
-<nav>
-    <a href="#smartphones">Smartphones</a>
-    <a href="#laptops">Laptops</a>
-    <a href="#audio">Audio</a>
-    <a href="#wearables">Smartwatches</a>
-    <a href="#gaming">Gaming</a>
-    <a href="#offers">Special Offers</a>
-</nav>
+    <nav>
+        <a href="#phones">Phones</a>
+        <a href="#laptops">Laptops</a>
+        <a href="#tablets">Tablets</a>
+        <a href="#accessories">Accessories</a>
+    </nav>
 
-<section id="offers">
-    <div class="promo">
-        <h2>🔥 Special Offers & New Arrivals</h2>
-        <p>Get 10% off on all new Gaming Accessories this week! Check out the latest iPhone 15 Pro in stock.</p>
+    <div class="container">
+        
+        <h2 id="phones" class="cat-header">Latest Smartphones</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="badge">TRENDING</span>
+                <img src="https://m.media-amazon.com/images/I/81SigAnNfKL._AC_SL1500_.jpg" alt="iPhone 15 Pro">
+                <h3>iPhone 15 Pro</h3>
+                <span class="price">Rs. 345,000</span>
+                <button class="btn">Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/I/71WjsS6282L._AC_SL1500_.jpg" alt="Samsung S24 Ultra">
+                <h3>Samsung S24 Ultra</h3>
+                <span class="price">Rs. 325,000</span>
+                <button class="btn">Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/I/61SdfK6I3+L._AC_SL1500_.jpg" alt="Google Pixel 8">
+                <h3>Google Pixel 8</h3>
+                <span class="price">Rs. 245,000</span>
+                <button class="btn">Buy Now</button>
+            </div>
+        </div>
+
+        <h2 id="laptops" class="cat-header">High-Performance Laptops</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/I/71f5Eu5lJSL._AC_SL1500_.jpg" alt="MacBook Air M3">
+                <h3>MacBook Air M3</h3>
+                <span class="price">Rs. 395,000</span>
+                <button class="btn">Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/I/71p-9-YvIIL._AC_SL1500_.jpg" alt="ASUS ROG Gaming">
+                <h3>ASUS ROG Gaming</h3>
+                <span class="price">Rs. 545,000</span>
+                <button class="btn">Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/I/81X8N6HOf3L._AC_SL1500_.jpg" alt="HP Spectre x360">
+                <h3>HP Spectre x360</h3>
+                <span class="price">Rs. 410,000</span>
+                <button class="btn">Buy Now</button>
+            </div>
+        </div>
+
+        <h2 id="tablets" class="cat-header">Powerful Tablets</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/I/81gfL9MvGBL._AC_SL1500_.jpg" alt="iPad Pro M2">
+                <h3>iPad Pro M2</h3>
+                <span class="price">Rs. 285,000</span>
+                <button class="btn">Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/I/51p1ZfS7pBL._AC_SL1500_.jpg" alt="Samsung Galaxy Tab S9">
+                <h3>Samsung Galaxy Tab S9</h3>
+                <span class="price">Rs. 195,000</span>
+                <button class="btn">Buy Now</button>
+            </div>
+        </div>
+
+        <h2 id="accessories" class="cat-header">Essential Accessories</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/I/813o9Q8XWDL._AC_SL1500_.jpg" alt="AirPods Max">
+                <h3>AirPods Max</h3>
+                <span class="price">Rs. 195,000</span>
+                <button class="btn">Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/I/81vXN80O75L._AC_SL1500_.jpg" alt="Apple Watch Ultra 2">
+                <h3>Apple Watch Ultra 2</h3>
+                <span class="price">Rs. 265,000</span>
+                <button class="btn">Buy Now</button>
+            </div>
+        </div>
+
     </div>
-</section>
 
-<!-- Smartphones Section -->
-<section id="smartphones">
-    <h2>Smartphones</h2>
-    <div class="product-grid">
-        <div class="product-card">
-            <img src="https://via.placeholder.com/200x150" alt="iPhone 15">
-            <h3>iPhone 15 Pro</h3>
-            <p>Titanium design, A17 Pro chip.</p>
-            <p class="price">Price: LKR 350,000</p>
-            <p>Availability: <b>In Stock</b></p>
-        </div>
-        <div class="product-card">
-            <img src="https://via.placeholder.com/200x150" alt="Samsung S24">
-            <h3>Samsung Galaxy S24</h3>
-            <p>Galaxy AI is here. Stunning camera.</p>
-            <p class="price">Price: LKR 320,000</p>
-            <p>Availability: <b>In Stock</b></p>
-        </div>
-        <div class="product-card">
-            <img src="https://via.placeholder.com/200x150" alt="Pixel 8">
-            <h3>Google Pixel 8</h3>
-            <p>The most advanced Pixel camera yet.</p>
-            <p class="price">Price: LKR 280,000</p>
-            <p>Availability: <b>Limited Stock</b></p>
-        </div>
-    </div>
-</section>
-
-<!-- Laptops Section -->
-<section id="laptops">
-    <h2>Laptops</h2>
-    <div class="product-grid">
-        <div class="product-card">
-            <h3>MacBook Air M2</h3>
-            <p>Supercharged by M2, incredibly thin.</p>
-            <p class="price">Price: LKR 450,000</p>
-            <p>Availability: <b>In Stock</b></p>
-        </div>
-        <div class="product-card">
-            <h3>ASUS ROG Zephyrus</h3>
-            <p>High performance gaming laptop.</p>
-            <p class="price">Price: LKR 580,000</p>
-            <p>Availability: <b>Out of Stock</b></p>
-        </div>
-        <div class="product-card">
-            <h3>Dell XPS 13</h3>
-            <p>The ultimate 13-inch laptop.</p>
-            <p class="price">Price: LKR 410,000</p>
-            <p>Availability: <b>In Stock</b></p>
-        </div>
-    </div>
-</section>
-
-<!-- Additional sections for Audio, Wearables, and Gaming follow the same format -->
-
-<footer>
-    <center><p>&copy; 2026 TechZone Gadget Store. All Rights Reserved.</p></center>
-</footer>
+    <footer>
+        <div class="student-info">Developed by: M. Madhuri Nadeeshani</div>
+        <p>Assignment: Internet & Web Designing | ESOFT Metro Campus</p>
+        <p>Branch: Monaragala | Batch: 2026</p>
+        <p>&copy; 2026 TechZone Premium Store. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
